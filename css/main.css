@@ -186,6 +186,24 @@ footer .right {
   padding:20px;
 }
 
+.volume span {
+  display:none;
+}
+.volume i {
+  top:5px;
+  position:relative;
+  font-size:19px;
+}
+.volume .fa-volume-off {
+  display:none;
+}
+.volume.mute .fa-volume-off {
+  display:inline-block;
+}
+.volume.mute .fa-volume-up {
+  display:none;
+}
+
 
 /* ==========================================================================
    Helper classes
