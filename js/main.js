@@ -1,5 +1,5 @@
 $('document').ready(function() {
-  var options = { videoId: 'cBh-WqlQ0JU',};
+  var options = { videoId: 'cBh-WqlQ0JU', mute: false};
   $('#wrapper').tubular(options);
 });
 
