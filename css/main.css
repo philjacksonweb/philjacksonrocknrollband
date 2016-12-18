@@ -113,8 +113,8 @@ p {
 
 #wrapper {
   height:100%;
-  -moz-box-shadow: inset 0 0 10em #000;  
-  -webkit-box-shadow: inset 0 0 10em #000;   
+  -moz-box-shadow: inset 0 0 10em #000;
+  -webkit-box-shadow: inset 0 0 10em #000;
   box-shadow: inset 0 0 10em #000;
   text-align:center;
   text-shadow: 1px 1px 1px #000;
@@ -174,6 +174,11 @@ h2:after {
 .modal {
   color:#000;
   max-width:100%;
+}
+
+section.modal a.close-modal {
+  background-image: url(../img/close.png);
+  background-size: 30px 30px;
 }
 
 footer {
@@ -318,11 +323,11 @@ footer .right {
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   .logo {
     margin-top:10px;
   }
-  
+
   footer {
     position:absolute;
     bottom:0;
