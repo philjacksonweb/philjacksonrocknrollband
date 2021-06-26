@@ -1,0 +1,46 @@
+---
+import Testimonials from '../components/Testimonials.md';
+import Booking from '../components/Booking.md';
+import Header from '../components/Header.astro';
+import Actions from '../components/Actions.astro';
+import Footer from '../components/Footer.astro';
+import Background from '../components/Background.astro';
+import Modal from '../components/Modal.astro';   
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Phil Jackson Rock 'n' Roll Band</title>
+    <meta name="description" content="Playing non stop hits by artists such as Jerry Lee Lewis, Elvis Presley, Roy Orbison, Chuck Berry, Buddy Holly and Many more.">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+    <div class="page">
+        <main>
+            <Header />
+
+            <Actions />
+            
+            <Modal id="testimonials" title="Testimonials">
+                <Testimonials />
+            </Modal>
+
+            <Modal id="booking" title="Booking Info">
+                <Booking />
+            </Modal>
+        </main>
+        
+        <Footer />
+    </div>
+    <Background />
+    <script src="/scripts/micromodal.min.js"></script>
+    <script>
+        MicroModal.init();
+    </script>
+</body>
+</html>

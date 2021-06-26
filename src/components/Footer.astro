@@ -1,0 +1,64 @@
+---
+const links = [
+    {
+        'label': 'Youtube',
+        'url': 'https://www.youtube.com/playlist?list=PL1AXy1L3QvLiVtT3Kf0VZM35XCaeNGB2A'
+    },
+    {
+        'label': 'Soundcloud',
+        'url': 'https://soundcloud.com/philjacksonmusic/sets/phil-jackson-rock-n-roll-band'
+    },
+    {
+        'label': 'Facebook',
+        'url': 'https://www.facebook.com/PhilJacksonRockNRollBand'
+    },
+    {
+        'label': 'Piano for your Ceremony / Event',
+        'url': 'https://www.youtube.com/watch?v=u1PonxCGtUQ&list=UU9EG0ltVDJ8B45vwr8Mou9Q'
+    },
+    {
+        'label': 'Repertoire',
+        'url': 'https://sites.google.com/site/pianotuitionandperformance/repertoire'
+    }
+]         
+---
+
+<footer>
+  <ul>
+    {links.map((link) => (
+      <li>
+        <a href="{link.url}">
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</footer>
+
+<style>
+  footer {
+    margin-top: auto;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+  }
+
+  ul {
+    margin-left: auto;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    color: inherit;
+    padding: 10px;
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+import { Markdown } from 'astro/components';
+---
+
+<header>
+    <h1>
+        <img width="300" height="131" src="/assets/logo.svg" alt="Astro logo">
+    </h1>
+    <h2>the UK's finest tribute to Rock 'n' Roll music</h2>
+    <Markdown>
+      Playing non stop hits by artists such as Jerry Lee Lewis, Elvis Presley, Roy Orbison, Chuck Berry, Buddy Holly and Many more, the band will have the audience jiving from the first number to the last.
+
+      Led by Phil Jackson's incredible vocals and dazzlingly authentic piano, the band captures the spontaneity, energy and spirit that made Rock 'n' Roll great.
+
+      With tailored sets available on request, the band is perfect for any party, wedding, vintage or retro event and will ensure that all of your guests are up and dancing for the whole night.
+    </Markdown>
+</header>
+
+<style>
+  header {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 65ch;  
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  img {
+    max-width:100%;
+    margin-top:30px;
+    filter: drop-shadow( 1px 1px 1px #000 );
+  }
+
+  h2 {
+    margin-top: 0.85em;
+  }
+
+  h2:before {
+    content:'\201C';
+  }
+  h2:after {
+    content:'\201D';
+  }
+</style>

@@ -1,0 +1,135 @@
+---
+const { id } = Astro.props;
+const { title } = Astro.props;
+const modalID = 'modal-' + id;
+const modalTitleID = 'modal-' + id + '-title';
+---
+
+<div class="modal micromodal-slide" id="{ modalID }" aria-hidden="true">
+  <div class="modal_overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal_container" role="dialog" aria-modal="true" aria-labelledby="{ modalTitleID }">
+      <header class="modal_header">
+        <h2 class="modal_title" id="{ modalTitleID }">
+          { title }
+        </h2>
+        <button class="modal_close" aria-label="Close modal" data-micromodal-close></button>
+      </header>
+      <div class="modal_content">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal_container {
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    width: 460px;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+
+  .modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal_title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .modal_close {
+    background: transparent;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border-radius: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transform: translate(6px, -6px);
+  }
+
+  .modal_header .modal_close:before { content: "\2715"; }
+
+  .modal_content {
+    margin-top: 1.5rem;
+  }
+
+  /**************************\
+    Demo Animation Style
+  \**************************/
+  @keyframes mmfadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+
+  @keyframes mmfadeOut {
+      from { opacity: 1; }
+        to { opacity: 0; }
+  }
+
+  @keyframes mmslideIn {
+    from { transform: translateY(15%); }
+      to { transform: translateY(0); }
+  }
+
+  @keyframes mmslideOut {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10%); }
+  }
+
+  .micromodal-slide {
+    display: none;
+  }
+
+  .micromodal-slide.is-open {
+    display: block;
+  }
+
+  .micromodal-slide[aria-hidden="false"] .modal_overlay {
+    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+
+  .micromodal-slide[aria-hidden="false"] .modal_container {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+
+  .micromodal-slide[aria-hidden="true"] .modal_overlay {
+    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+
+  .micromodal-slide[aria-hidden="true"] .modal_container {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+
+  .micromodal-slide .modal_container,
+  .micromodal-slide .modal_overlay {
+    will-change: transform;
+  }
+</style>
